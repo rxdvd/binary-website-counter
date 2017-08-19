@@ -9,6 +9,9 @@ $count = intval(file_get_contents("count.txt"));
 $im_width = 300; $im_height = 300; //width & height in px
 $im = imagecreatetruecolor(300, 300);
 
+//Make background transparent
+imagecolortransparent($im, imagecolorallocate($im, 0, 0, 0));
+
 //Use anti-aliasing
 imageantialias($im, true);
 
