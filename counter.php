@@ -21,9 +21,9 @@ $max = 250; //Maximum coordinate of the initial square
 
 //Define array of coordinates for the vertices of the initial square like [x0, y0, x1, y1, ...]
 $init_square = array($min, $min,
-					 $max, $min,
-					 $max, $max,
-					 $min, $max);
+                     $max, $min,
+                     $max, $max,
+                     $min, $max);
 
 //Draws 16 squares rotated at an angle of pi/32 radians of each other
 //Each square represents a binary digit of the visitor count with the initial square being the right-most digit
