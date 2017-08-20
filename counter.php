@@ -16,7 +16,7 @@ imagecolortransparent($im, imagecolorallocate($im, 0, 0, 0));
 imageantialias($im, true);
 
 //Colour of image
-$w = imagecolorallocate($im, 255, 255, 255); //white
+$w = imagecolorallocate($im, 0xFF, 0xFF, 0xFF); //white
 
 $min = 50;  //Minimum coordinate of the initial square
 $max = 250; //Maximum coordinate of the initial square
@@ -31,7 +31,7 @@ $init_square = array($min, $min,
 //Draws 16 squares rotated at an angle of pi/32 radians to each other
 //Each square represents a binary digit of the visitor count with the initial square being the right-most digit
 //Squares that correspond to a 0 are skipped, giving the described effect
-for($i = 0; $i < 16; $i++) if($count & (1 << $i)) imagepolygon($im, rotate_square($init_square, $i * pi() / 32), 4, $w);
+for($i = 0; $i < 0x10; $i++) if($count & (1 << $i)) imagepolygon($im, rotate_square($init_square, $i * pi() / 0x20), 4, $w);
 
 //Write the count in numerals in the centre of the image (zero-padded to 5 chars), incrementing the counter itself simultaneously
 imagettftext($im, 32, 0, ($im_width / 2) - 62, ($im_height / 2) + 16, $w, "DroidSansMono.ttf", substr("00000" . $count++, -5, 5));
