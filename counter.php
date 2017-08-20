@@ -28,9 +28,9 @@ $init_square = array($min, $min,
                      $max, $max,
                      $min, $max);
 
-//Draws 16 squares rotated at an angle of pi/32 radians of each other
+//Draws 16 squares rotated at an angle of pi/32 radians to each other
 //Each square represents a binary digit of the visitor count with the initial square being the right-most digit
-//Squares that correspond to a 0 are skipped
+//Squares that correspond to a 0 are skipped, giving the described effect
 for($i = 0; $i < 16; $i++) if($count & (1 << $i)) imagepolygon($im, rotate_square($init_square, $i * pi() / 32), 4, $w);
 
 //Write the count in numerals in the centre of the image (zero-padded to 5 chars), incrementing the counter itself simultaneously
